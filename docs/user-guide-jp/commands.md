@@ -255,6 +255,26 @@ python3 -m SuperClaude install --list-components | grep mcp
 - スプリント計画:`/sc:workflow --strategy agile`
 - アーキテクチャ計画：`/sc:workflow "microservices migration"`
 
+### `/sc:orchestrate` - 段階的最適化オーケストレーター
+
+**目的:** 1 コマンドで「スコープ推定 → 戦略候補列挙 → 自動選択 → 実行 → 方向転換時のドリフト監視」まで行う。タスクの大きさが不明なときや、Plan Mode / worktree / 並列の選択を任せたいときに使う。
+
+**やること:**
+- **段階1:** 軽量プラン（影響範囲のみ）。スコープを small / medium / large で判定。
+- **段階2:** 戦略候補 3 つ（単一セッション / 同一セッション内並列 / エージェントチーム）を列挙。
+- **段階3:** コスト・再現性・拡張性でスコアし、**自動で 1 つ選択**（ユーザーに選ばせない）。
+- **段階4:** 実行。large のときは [Claude Code エージェントチーム](https://code.claude.com/docs/ja/agent-teams) を作成。
+- **段階5:** 「やり直し」「こっちの方がいい」と言われたら、保存した計画と比較し、手戻りリスクを表示して確認してから続行。
+
+**構文:** `/sc:orchestrate [タスク説明]`
+
+**大規模とエージェントチーム:** 戦略がエージェントチームと判定された場合、[エージェントチーム](https://code.claude.com/docs/ja/agent-teams) を使用する。`CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1` を環境変数または `.claude/settings.json` の `"env"` に設定すること。
+
+**例:**
+- `/sc:orchestrate "ダークモードトグルを追加"` → 単一セッションになりやすい
+- `/sc:orchestrate "認証をリファクタしてテスト追加"` → 同一セッション内並列になりやすい
+- `/sc:orchestrate "チェックアウト: API、UI、E2E"` → エージェントチームになりやすい
+
 ---
 
 ## 一般的なワークフロー

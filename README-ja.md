@@ -458,6 +458,9 @@ SuperClaude v4.2は、自律的、適応的、インテリジェントなウェ�
 - 🧪 [**テスト＆デバッグ**](docs/developer-guide/testing-debugging.md)  
   *品質保証*
 
+- 🏢 [**会社向けセットアップ・リポごと設定**](docs/user-guide/company-setup-and-per-repo.md)  
+  *会社向けの作り方・オン/オフ・自分のスキルをSuperClaudeで活用*
+
 </td>
 <td valign="top">
 

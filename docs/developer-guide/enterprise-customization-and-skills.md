@@ -90,6 +90,7 @@ Fork 運用時は、upstream には `changelog-and-planning.mdc` と `enterprise
 
 ## 6. 関連ドキュメント
 
+- [会社向けセットアップ・リポごと設定](../user-guide/company-setup-and-per-repo.md) - 会社向けの作り方（Fork しない場合）、リポジトリごとのオン/オフ、自分用スキルの活用
 - [Extending the Framework](technical-architecture.md#extending-the-framework) - コマンド・エージェント・モードの追加
 - [Contributing Code](contributing-code.md) - 開発フローと PR
 - [Documentation Index](documentation-index.md) - 開発者向けドキュメント一覧
