@@ -1,0 +1,24 @@
+---
+description: 企業・プロジェクト別のスキル蓄積のレイヤー。SuperClaudeベースの上に、CLAUDE.md・.cursor/rules・.claude/skills で独自ルール・スキルを重ねる。
+alwaysApply: true
+---
+
+# 企業・プロジェクト別スキル蓄積
+
+## レイヤー構成（下がベース、上が上書き）
+
+1. **SuperClaude ベース** - `pipx install superclaude && superclaude install` で入るコマンド・エージェント・MCP など
+2. **プロジェクト共通** - `CLAUDE.md`（UV・構成・開発フロー）、`AGENTS.md`（リポジトリ方針）
+3. **Cursor ルール** - `.cursor/rules/*.mdc`（コーディング規約・ファイル別ルール・企業固有ルール）
+4. **スキル** - `.claude/skills/` 配下（confidence-check 等の共通スキル ＋ 企業別サブディレクトリ）
+
+## 企業ごとのスキルを貯める場所
+
+- **.claude/skills/\<company\>/** - 企業・チーム固有のスキル（例: `tkbase/`, `sighted/`）。各スキルは `SKILL.md` と必要ならスクリプトを置く。
+- **.cursor/rules/\<company\>-*.mdc** - 企業固有のコーディング規約・ドメインルール（例: `tkbase-conventions.mdc`）。`alwaysApply: true` または `globs` で適用範囲を指定。
+
+Fork 運用時は upstream の更新を取り込みつつ、上記の企業用ディレクトリだけ自社で追加・保守する。
+
+## 参照
+
+詳細は `docs/developer-guide/enterprise-customization-and-skills.md` を参照。

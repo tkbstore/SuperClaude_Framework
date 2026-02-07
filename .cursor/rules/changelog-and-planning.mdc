@@ -1,0 +1,20 @@
+---
+description: Changelog更新と計画（TASK.md / PLANNING.md）のルール。 notableな変更時はCHANGELOGを更新し、タスクはTASK.mdで管理する。
+alwaysApply: true
+---
+
+# Changelog と計画のルール
+
+## CHANGELOG.md
+
+- **形式**: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) に準拠。Semantic Versioning に従う。
+- **更新タイミング**: ユーザー向けに notable な変更（新機能・修正・破壊的変更）を行ったら、必ず `[Unreleased]` に追記する。
+- **記述**: Added / Changed / Fixed / Removed / Security のいずれかの見出しの下に、簡潔な箇条書きで記載。該当する Issue/PR があれば `(#xxx)` で参照する。
+
+## 計画・タスク
+
+- **TASK.md**: 現在のタスク・優先度・バックログを管理する。作業開始時に読み、完了したらステータスを更新する。
+- **PLANNING.md**: アーキテクチャと絶対ルール。実装判断時に参照する。
+- **KNOWLEDGE.md**: 蓄積した知見・トラブルシュート。同じ失敗を防ぐために追記する。
+
+計画を立てる流れ: 目的を TASK.md に落とし、必要なら PLANNING.md に合致しているか確認してから実装に入る。

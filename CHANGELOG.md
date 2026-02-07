@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- **Enterprise customization and Cursor rules** - Structure for fork/enterprise adoption
+  - Cursor rules (`.cursor/rules/`) for changelog discipline and planning (TASK.md, PLANNING.md)
+  - Per-company / per-project skills layering: SuperClaude base → CLAUDE.md → `.claude/skills/<company>/` and `.cursor/rules/`
+  - Documentation: [Enterprise customization and skills](docs/developer-guide/enterprise-customization-and-skills.md) for 企業向けカスタマイズ・スキル蓄積
+
 ## [4.2.0] - 2026-01-18
 ### Added
 - **AIRIS MCP Gateway** - Optional unified MCP solution with 60+ tools (#509)

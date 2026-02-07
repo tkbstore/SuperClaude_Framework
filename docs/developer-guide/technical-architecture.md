@@ -323,6 +323,10 @@ User Input (in Claude Code): "/sc:analyze src/ --focus security"
 2. Define activation triggers and modifications
 3. Mode activates based on triggers
 
+### Enterprise / Fork でのカスタマイズ
+
+企業・プロジェクト別のスキル蓄積、changelog ルール、Cursor ルールのレイヤー構成は [Enterprise customization and skills](enterprise-customization-and-skills.md) を参照。
+
 ### Best Practices
 
 - **Keep Context Focused**: One concept per file
