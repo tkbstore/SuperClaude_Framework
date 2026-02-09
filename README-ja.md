@@ -425,6 +425,12 @@ SuperClaude v4.2は、自律的、適応的、インテリジェントなウェ�
 - 💾 [**インストールガイド**](docs/getting-started/installation.md)  
   *詳細なセットアップ手順*
 
+- 📦 [**クローンからのセットアップ**](docs/CLONE_SETUP_JA.md)  
+  *リポジトリをクローンしてインストールする手順・`/sc:orchestrate` の使い方*
+
+- 🧪 [**別リポで試すときの手順**](docs/TRY_IN_OTHER_REPO_JA.md)  
+  *別リポジトリで試す際の運用（可視化・8分割・モデル選択）。**使うときはこのドキュメントを Agent に渡すこと***
+
 </td>
 <td valign="top">
 
@@ -473,6 +479,8 @@ SuperClaude v4.2は、自律的、適応的、インテリジェントなウェ�
 </td>
 </tr>
 </table>
+
+**別リポジトリで SuperClaude を試すとき:** 運用手順（可視化・8分割・小さめモデルなど）に従わせるため、[試し方ドキュメント](docs/TRY_IN_OTHER_REPO_JA.md) を **Agent に渡してから** 利用してください。
 
 </div>
 
