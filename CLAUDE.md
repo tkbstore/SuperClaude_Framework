@@ -229,6 +229,8 @@ git worktree remove ../SuperClaude_Framework-integration
 **PLANNING.md** - Architecture, design principles, absolute rules
 **TASK.md** - Current tasks and priorities
 **KNOWLEDGE.md** - Accumulated insights and troubleshooting
+**.cursor/rules/** - Cursor rules (changelog/planning, enterprise skills layering)
+**docs/developer-guide/enterprise-customization-and-skills.md** - 企業向けカスタマイズ・スキル蓄積
 
 Additional docs in `docs/user-guide/`, `docs/developer-guide/`, `docs/reference/`
 

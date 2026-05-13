@@ -49,6 +49,7 @@ Here is a complete list of all available SuperClaude (`/sc`) commands.
 | `/sc:task` | Execute complex tasks with intelligent workflow management and delegation |
 | `/sc:test` | Execute tests with coverage analysis and automated quality reporting |
 | `/sc:troubleshoot` | Diagnose and resolve issues in code, builds, deployments, and system behavior |
+| `/sc:orchestrate` | Staged optimization: auto-select strategy (single / parallel / Agent Team) and run with drift monitoring |
 | `/sc:workflow` | Generate structured implementation workflows from PRDs and feature requirements |
 
 ## SuperClaude Framework Flags

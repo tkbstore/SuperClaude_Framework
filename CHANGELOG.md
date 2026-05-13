@@ -14,6 +14,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Comprehensive execution tests** - 62 new tests for ParallelExecutor, ReflectionEngine, SelfCorrectionEngine, and orchestrator (136 total)
 - **Claude Code integration guide** - New `docs/user-guide/claude-code-integration.md` mapping all SuperClaude features to Claude Code's native extension points with gap analysis
 - **Claude Code gap analysis** - Documented in KNOWLEDGE.md: skills migration (critical), hooks integration (high), plan mode (medium), settings profiles (medium)
+- **/sc:orchestrate** - Single-entry orchestration with five internal stages (scope → strategy candidates → auto-select → execute → drift monitoring). Uses Claude Code Agent Teams when scope is large; requires `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1`.
+- **Enterprise customization and Cursor rules** - Structure for fork/enterprise adoption
+  - Cursor rules (`.cursor/rules/`) for changelog discipline and planning (TASK.md, PLANNING.md)
+  - Per-company / per-project skills layering: SuperClaude base → CLAUDE.md → `.claude/skills/<company>/` and `.cursor/rules/`
+  - Documentation: [Enterprise customization and skills](docs/developer-guide/enterprise-customization-and-skills.md) for 企業向けカスタマイズ・スキル蓄積
 
 ### Fixed
 - **SECURITY: shell=True removal** - Replaced `shell=True` with user-controlled `$SHELL` in `_run_command()` with direct list-based `subprocess.run` (#536)

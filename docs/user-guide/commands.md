@@ -66,6 +66,7 @@ PROJECT_INDEX.md         # Project quick start (3K tokens)
 src/superclaude/commands/
 ├── pm.md              # /sc:pm - Project Manager Agent (593 lines, most detailed)
 ├── task.md            # /sc:task - Task Management
+├── orchestrate.md     # /sc:orchestrate - Staged Optimization Orchestrator
 ├── workflow.md        # /sc:workflow - Workflow Generator
 ├── spawn.md           # /sc:spawn - Meta-System Orchestration
 ├── brainstorm.md      # /sc:brainstorm - Requirements Discovery
@@ -144,6 +145,7 @@ src/superclaude/skills/confidence-check/SKILL.md  # Confidence check skill
 | Command | Purpose | File |
 |---------|---------|------|
 | [`/sc:pm`](#scpm---project-manager-agent) | Project Manager (always active) | `pm.md` |
+| [`/sc:orchestrate`](#scorchestrate---staged-optimization-orchestrator) | Single command: auto strategy + drift monitoring | `orchestrate.md` |
 | [`/sc:spawn`](#scspawn---meta-system-task-orchestration) | Decomposition Epic → Task | `spawn.md` |
 | [`/sc:task`](#sctask---enhanced-task-management) | Execution with MCP coordination | `task.md` |
 | [`/sc:workflow`](#scworkflow---implementation-workflow-generator) | Generate plan from PRD | `workflow.md` |
@@ -365,6 +367,33 @@ PM Agent:
 **Difference from `/sc:task`:**
 - workflow = planning (generates roadmap)
 - task = execution (actually does work)
+
+---
+
+### `/sc:orchestrate` - Staged Optimization Orchestrator
+
+**When to use:** You want a single entry point: one command that decides scope, picks strategy (single session / in-session parallel / Agent Team), runs the work, and monitors for direction changes. Use when task size is unclear or you want to avoid choosing between Plan Mode, worktrees, or parallel execution yourself.
+
+**What it does:**
+- **Stage 1:** Lightweight plan (impact scope only), classifies scope as small / medium / large.
+- **Stage 2:** Lists three strategies: single session, in-session parallel, Agent Team.
+- **Stage 3:** Scores by cost, reproducibility, extensibility and **auto-selects** one (no user choice).
+- **Stage 4:** Executes—single session, parallel tool waves, or creates a Claude Code [Agent Team](https://code.claude.com/docs/ja/agent-teams) when large.
+- **Stage 5:** On direction change ("redo", "other approach"), compares to stored plan, shows rework risk, asks for confirmation before continuing.
+
+**Syntax:**
+```
+/sc:orchestrate [task-description]
+```
+
+**Large scope and Agent Teams:** If the selected strategy is Agent Team, Claude Code's experimental [Agent Teams](https://code.claude.com/docs/ja/agent-teams) are used. Set `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1` in your environment or in `.claude/settings.json` under `"env"`.
+
+**Examples:**
+```bash
+/sc:orchestrate "add dark mode toggle"           # Often stays single session
+/sc:orchestrate "refactor auth and add tests"   # May use in-session parallel
+/sc:orchestrate "checkout flow: API, UI, E2E"    # May create Agent Team
+```
 
 ---
 

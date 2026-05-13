@@ -85,6 +85,7 @@ All commands are namespaced under `sc:` to keep them organized:
 | `/sc:index-repo` | Repository indexing | `/sc:index-repo` |
 | `/sc:agent` | Specialized AI agents | `/sc:agent type` |
 | `/sc:recommend` | Command suggestions | `/sc:recommend` |
+| `/sc:orchestrate` | Staged orchestration | `/sc:orchestrate "task"` |
 | `/sc` | Show help | `/sc` |
 
 ## Features

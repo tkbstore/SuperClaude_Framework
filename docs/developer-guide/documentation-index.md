@@ -81,6 +81,7 @@ This index provides comprehensive access to all SuperClaude Framework developmen
 - [Adding New Agents](contributing-code.md#adding-new-agents) - Domain specialist creation
 - [Adding New Commands](contributing-code.md#adding-new-commands) - Workflow pattern development
 - [Extending the Framework](technical-architecture.md#extending-the-framework) - Framework expansion
+- [Enterprise customization and skills](enterprise-customization-and-skills.md) - 企業向けカスタマイズ・スキル蓄積（Fork／Cursor ルール／changelog）
 
 ### 🧪 Verification & Quality
 
